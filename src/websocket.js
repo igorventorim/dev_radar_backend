@@ -30,8 +30,8 @@ exports.setupWebSocket = (server) => {
 
 exports.findConnections = (coordinates, techs) => {
     return connections.filter(connection => {
-        return calculateDistance(coordinates, connections.coordinates) < 10
-            && connections.techs.some(item => techs.includes(item))
+        return calculateDistance(coordinates, connection.coordinates) < 10
+            && connection.techs.some(item => techs.includes(item))
     })
 };
 
